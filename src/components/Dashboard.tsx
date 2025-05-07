@@ -62,6 +62,7 @@ export function Dashboard() {
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
+                <SelectItem value="All">All</SelectItem>
                   <SelectItem value="Open">Open</SelectItem>
                   <SelectItem value="In Progress">In Progress</SelectItem>
                   <SelectItem value="Resolved">Resolved</SelectItem>
@@ -76,6 +77,7 @@ export function Dashboard() {
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
+                  <SelectItem value="All">All</SelectItem>
                   <SelectItem value="Urgent">Urgent</SelectItem>
                   <SelectItem value="Low">Low</SelectItem>
                   <SelectItem value="Medium">Medium</SelectItem>
