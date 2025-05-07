@@ -1,54 +1,47 @@
-# React + TypeScript + Vite
+# 🛠️ Support Ticket Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clean and responsive web application to view, search, filter, and update customer support tickets — built as part of the Solosphere frontend assignment.
 
-Currently, two official plugins are available:
+### 🚀 [Live Demo](https://support-ticket-gamma.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 📌 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 🔍 **Search Tickets**: Real-time search by title, customer name, etc.
+- 🎯 **Filter by Status & Priority**: Dropdown filters to quickly narrow down results.
+- 📋 **View Ticket Details**: Click on a ticket to view its full details in a modal.
+- 🔄 **Update Ticket Status**: Change the ticket’s status (Open, In Progress, Resolved) directly from the detail view.
+- 🌓 **Responsive Design**: Fully functional across desktop and mobile devices.
+- 🎨 **Clean & Minimal UI**: Simple, modern design with accessible layout.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📷 Screenshots
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Dashboard View | Ticket Detail Modal | Filters | Dark Mode |
+|----------------|---------------------|---------|-----------|
+| ![Dashboard](./public/Dashboard.png) | ![Modal](./public/TicketDetails.png) | ![Filters](./public/Filters.png) | ![Dark Mode](./public/DarkMode.png) |
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+---
+
+## 🧑‍💻 Tech Stack
+
+- **React.js** – Frontend library
+- **CSS Modules / Tailwind / Styled-Components / Shadcn-ui** - CSS and Design
+- **React Hooks** – `useState`, `useEffect` for state management
+
+---
+
+## 🛠️ Getting Started
+
+```bash
+# Clone the repository
+git clone https://github.com/Vaibhav-Chitransh/Solsphere-Frontend-Assignment.git
+cd Solsphere-Frontend-Assignment
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev  
