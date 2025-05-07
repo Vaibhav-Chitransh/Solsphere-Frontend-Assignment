@@ -1,8 +1,13 @@
-const App = () => {
+import { ThemeProvider } from "@/components/theme-provider"
+import { ModeToggle } from "./components/mode-toggle"
+import Dashboard from "./components/Dashboard"
+
+function App() {
   return (
-    <div>
-      App Component
-    </div>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <ModeToggle />
+        <Dashboard />
+    </ThemeProvider>
   )
 }
 

@@ -1,4 +1,6 @@
-export const mockTickets = [
+import type { Ticket, TicketPriority, TicketStatus } from "@/types/ticket.ts";
+
+export const mockTickets: Ticket[] = [
   {
     id: "TKT-1001",
     title: "Login failure on Safari for SSO users",
@@ -69,8 +71,8 @@ export const mockTickets = [
     title: "Mobile app crash on startup",
     customer: "GoRide",
     customerEmail: "support@goride.com",
-    priority: "Urgent",
-    status: "Resolved",
+    priority: "Urgent" as TicketPriority,
+    status: "Resolved" as TicketStatus,
     createdAt: "2025-04-30T11:25:00Z",
     updatedAt: "2025-05-01T17:00:00Z",
     description:
@@ -268,3 +270,35 @@ export const mockTickets = [
     category: "Authentication",
   },
 ];
+
+export function getTickets(): Ticket[] {
+  return mockTickets;
+}
+
+export function getTicketById(id: string): Ticket | undefined {
+  return mockTickets.find((ticket) => ticket.id === id);
+}
+
+export function updateTicketStatus(
+  id: string,
+  newStatus: TicketStatus
+): Ticket | undefined {
+  const ticket = mockTickets.find((ticket) => ticket.id === id);
+  if (ticket) {
+    ticket.status = newStatus;
+    ticket.updatedAt = new Date().toISOString();
+  }
+  return ticket;
+}
+
+export function updateTicketPriority(
+  id: string,
+  newPriority: TicketPriority
+): Ticket | undefined {
+  const ticket = mockTickets.find((ticket) => ticket.id === id);
+  if (ticket) {
+    ticket.priority = newPriority;
+    ticket.updatedAt = new Date().toISOString();
+  }
+  return ticket;
+}
