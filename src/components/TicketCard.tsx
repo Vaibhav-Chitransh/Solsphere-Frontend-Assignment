@@ -2,8 +2,11 @@ import type { Ticket } from "@/types/ticket";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useTickets } from "@/context/TicketContext";
-import { formatDistanceToNow } from "date-fns";
 import { Circle } from "lucide-react";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+
+dayjs.extend(relativeTime);
 
 interface TicketCardProps {
   ticket: Ticket;
@@ -27,6 +30,8 @@ export function TicketCard({ ticket }: TicketCardProps) {
 
   const getPriorityIcon = (priority: string) => {
     switch (priority) {
+        case "Urgent":
+        return <Circle className="h-3 w-3 fill-red-500 stroke-red-600 mr-1" />;
       case "High":
         return <Circle className="h-3 w-3 fill-red-500 stroke-red-500 mr-1" />;
       case "Medium":
@@ -38,9 +43,35 @@ export function TicketCard({ ticket }: TicketCardProps) {
     }
   };
 
-  const formattedTime = formatDistanceToNow(new Date(ticket.updatedAt), {
-    addSuffix: true,
-  });
+  const getRelativeTime = (date: string): string => {
+    const now = new Date();
+    const past = new Date(date);
+    const seconds = Math.floor((now.getTime() - past.getTime()) / 1000);
+  
+    const intervals: { [key: string]: number } = {
+      year: 31536000,
+      month: 2592000,
+      week: 604800,
+      day: 86400,
+      hour: 3600,
+      minute: 60,
+      second: 1,
+    };
+  
+    for (const [unit, value] of Object.entries(intervals)) {
+      const count = Math.floor(seconds / value);
+      if (count > 0) {
+        return new Intl.RelativeTimeFormat("en", { numeric: "auto" }).format(
+          -count,
+          unit as Intl.RelativeTimeFormatUnit
+        );
+      }
+    }
+  
+    return "just now";
+  };
+  
+  const formattedTime = getRelativeTime(ticket.updatedAt);
 
   return (
     <Card 
