@@ -19,9 +19,10 @@ A clean and responsive web application to view, search, filter, and update custo
 
 ## 📷 Screenshots
 
-| Dashboard View | Ticket Detail Modal | Filters | Dark Mode |
-|----------------|---------------------|---------|-----------|
-| ![Dashboard](./public/Dashboard.png) | ![Modal](./public/TicketDetails.png) | ![Filters](./public/Filters.png) | ![Dark Mode](./public/DarkMode.png) |
+![Dashboard](./public/Dashboard.png)
+![Modal](./public/TicketDetails.png)
+![Filters](./public/Filters.png)
+![Dark Mode](./public/DarkMode.png)
 
 ---
 
