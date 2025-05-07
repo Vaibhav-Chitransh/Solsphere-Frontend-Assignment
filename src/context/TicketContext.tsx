@@ -1,8 +1,8 @@
 import { createContext, useContext, useState } from "react";
 import type { ReactNode } from "react";
 import { getTickets, updateTicketStatus, updateTicketPriority } from "@/data/mockData";
-import type { Ticket, TicketPriority, TicketStatus } from "@/types/ticket.ts";
-import { useToast } from "@/components/ui/use-toast";
+import type { Ticket, TicketPriority, TicketStatus } from "@/types/ticket";
+import { useToast } from "@/hooks/use-toast";
 
 interface TicketContextType {
   tickets: Ticket[];
