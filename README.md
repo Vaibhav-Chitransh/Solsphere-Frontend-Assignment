@@ -19,10 +19,10 @@ A clean and responsive web application to view, search, filter, and update custo
 
 ## 📷 Screenshots
 
-![Dashboard](./public/Dashboard.png)
-![Modal](./public/TicketDetails.png)
-![Filters](./public/Filters.png)
-![Dark Mode](./public/DarkMode.png)
+Dashboard ![Dashboard](./public/Dashboard.png)
+Ticket Details ![Modal](./public/TicketDetails.png)
+Filters![Filters](./public/Filters.png)
+Dark Mode![Dark Mode](./public/DarkMode.png)
 
 ---
 
